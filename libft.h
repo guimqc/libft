@@ -4,9 +4,9 @@
 #include <unistd.h>
 #include <stdio.h>
 
+size_t  ft_strlen(char *str);
 void    ft_putstr(char *str);
 void    ft_putchar(char c);
-int     ft_strlen(char *str);
 int     ft_atoi(char *str);
 int     ft_isascii(char c);
 int     ft_isprint(char c);
