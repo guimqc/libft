@@ -2,6 +2,8 @@
 #define LIBFT_H
 
 #include <unistd.h>
+#include <stdio.h>
+
 void    ft_putstr(char *str);
 void    ft_putchar(char c);
 int     ft_strlen(char *str);
@@ -13,4 +15,5 @@ int     ft_isalpha(int c);
 int     ft_toupper(int c);
 int	    ft_isalnum(int c);
 int     ft_tolower(int c);
+
 #endif
