@@ -2,7 +2,7 @@
 
 int main()
 {
-    ft_putchar('\n');
+    ft_putstr("*****************************************************\n");
     ft_putstr("THIS PROGRAM TEST ALL THE MANDATORY FUNCTION OF LIBFT\n");
     ft_putchar('\n');
 
@@ -41,5 +41,11 @@ int main()
     printf("ft_isprint(\\t) = %d\n", ft_isprint('\t'));
     ft_putchar('\n');
 
+    printf("ft_strlen(\"iwashighmakingthis\") = %zu\n", ft_strlen("iwashighmakingthis"));
+    ft_putchar('\n');
+    
+    printf("ft_tolower('S') = %i\n", ft_tolower('S'));
+    printf("ft_toupper('s') = %i\n", ft_toupper('s'));
+    ft_putchar('\n');
     
 }
