@@ -1,4 +1,4 @@
-int my_atoi(char *str)
+int ft_atoi(char *str)
 {
 	int i;
 	int result;
@@ -9,7 +9,8 @@ int my_atoi(char *str)
 	sign = 1;
 	sign_met = 0;
 	i = 0;
-	while (isspace(str[i]))
+	while ((str[i] == '\t') || (str[i] == '\n') || (str[i] == '\v') || (str[i] == '\f')
+			|| (str[i] == 'r') || (str[i] == ' '))
 	{
 		i++;
 	}
