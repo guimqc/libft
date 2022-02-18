@@ -7,4 +7,4 @@ libft.a: *.o *.c
 	gcc -Wall -Werror -Wextra -c *.c
 
 clean:
-	rm libft.a
+	rm -f libft.a *.o
