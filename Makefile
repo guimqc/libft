@@ -1,12 +1,18 @@
 NAME = libft.a
+CC = gcc
+CC_FLAGS = -Wall -Werror -Wextra
+OBJ_DIR = obj/
 
 all: $(NAME)
 
 $(NAME): *.o *.c
-	ar rcs $(NAME) *.o && rm *.o
+	ar rcs $(NAME) *.o
 
 *.o: *.c
-	gcc -Wall -Werror -Wextra -c *.c
+	$(CC) $(CC_FLAGS) -c *.c
 
 clean:
-	rm -f $(NAME) *.o
+	rm -f *.o
+
+fclean: clean
+	rm -f $(NAME)
