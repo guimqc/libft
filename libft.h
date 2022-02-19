@@ -2,8 +2,6 @@
 #define LIBFT_H
 
 #include <unistd.h>
-#include <stdio.h>
-#include <string.h> // strncmp test
 
 size_t  ft_strlen(char *str);
 void    ft_putstr(char *str);
