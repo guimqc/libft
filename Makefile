@@ -9,7 +9,7 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
 
-all: $(NAME) clean
+all: $(NAME) clean l
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
