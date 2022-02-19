@@ -1,10 +1,12 @@
-all: libft.a
+NAME = libft.a
 
-libft.a: *.o *.c
-	ar rcs libft.a *.o && rm *.o
+all: $(NAME)
+
+$(NAME): *.o *.c
+	ar rcs $(NAME) *.o && rm *.o
 
 *.o: *.c
 	gcc -Wall -Werror -Wextra -c *.c
 
 clean:
-	rm -f libft.a *.o
+	rm -f $(NAME) *.o
