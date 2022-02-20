@@ -6,8 +6,6 @@ void	ft_bzero(void *s, size_t n)
 	char *converted_str;
 
 	converted_str = (char *)s;
-	if (n == 0)
-		return ;
 	i = -1;
 	while (++i < n)
 		converted_str[i] = 0;
