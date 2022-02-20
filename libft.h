@@ -8,6 +8,7 @@ void    ft_putchar(char c);
 void    ft_putstr(char *str);
 void    ft_bzero(void *s, size_t n);
 void   *ft_memset(void *str, int c, size_t len);
+void   *ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 int     ft_atoi(char *str);
 int     ft_isascii(char c);
 int     ft_isprint(char c);
