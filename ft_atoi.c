@@ -1,20 +1,26 @@
-int	ft_atoi(char *str)
+#include <stdio.h>
+
+static int check_space(char *str)
 {
 	int i;
-	int result;
-	int sign_met;
-	int sign;
 
-	result = 0;
-	sign = 1;
-	sign_met = 0;
 	i = 0;
 	while ((str[i] == '\t') || (str[i] == '\n') || (str[i] == '\v') || (str[i] == '\f')
-			|| (str[i] == 'r') || (str[i] == ' '))
-	{
-		i++;
-	}
-	while (str[i] == '+' || str[i] == '-')
+				|| (str[i] == 'r') || (str[i] == ' '))
+			i++;
+	return (i);
+}
+
+static int check_sign(char *str)
+{
+	int i;
+	int sign;
+	int sign_met;
+	
+	sign = 1;
+	sign_met = 0;
+	i = check_space(str);
+	while(str[i] == '+' || str[i] == '-')
 	{
 		if (sign_met == 1)
 			break ;
@@ -23,6 +29,23 @@ int	ft_atoi(char *str)
 		sign_met = 1;
  		i++;
 	}
+	return (sign * i);
+}
+
+int	ft_atoi(char *str)
+{
+	int i;
+	int sign;
+	int result;
+
+	sign = 1;
+	i = check_sign(str);
+	if (i < 0)
+	{
+		i *= -1;
+		sign = -1;
+	}
+	result = 0;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result = result * 10 + str[i] - 48;
