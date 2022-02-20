@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 static int check_space(char *str)
 {
 	int i;
