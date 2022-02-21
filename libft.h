@@ -4,6 +4,7 @@
 #include <unistd.h>
 
 size_t  ft_strlen(char *str);
+size_t  ft_strlcpy(char *dst, const char *src, size_t dstsize);
 void    ft_putchar(char c);
 void    ft_putstr(char *str);
 void    ft_bzero(void *s, size_t n);
