@@ -30,14 +30,14 @@ static int check_sign(char *str)
 	return (sign * i);
 }
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int i;
 	int sign;
 	int result;
 
 	sign = 1;
-	i = check_sign(str);
+	i = check_sign((char *)str);
 	if (i < 0)
 	{
 		i *= -1;
