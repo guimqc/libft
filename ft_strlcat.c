@@ -27,13 +27,13 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	return (dlen + i);
 }
 
-int main()
-{
-	char dst[12] = "hello";
-	char src[] = " world";
-	printf("initial dst = %s\n", dst);
-	printf("initial dst len = %zu\n", ft_strlen(dst));
-	strlcat(dst, src, 12);
-	printf("after strlcat dst = %s\n", dst);
-	printf("after strlcat dst len = %zu\n", ft_strlen(dst));
-}
+// int main()
+// {
+// 	char dst[12] = "hello";
+// 	char src[] = " world";
+// 	printf("initial dst = %s\n", dst);
+// 	printf("initial dst len = %zu\n", ft_strlen(dst));
+// 	strlcat(dst, src, 12);
+// 	printf("after strlcat dst = %s\n", dst);
+// 	printf("after strlcat dst len = %zu\n", ft_strlen(dst));
+// }
