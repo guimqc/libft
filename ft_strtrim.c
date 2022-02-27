@@ -14,12 +14,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	j = ft_strlen((char *)s1) - 1;
 	while (s1[j] == ((char *)set)[0])
 		j--;
-	return (ft_substr(s1, i, j));
+	printf("%d\n", j);
+	return (ft_substr(s1, i, j - i + 1));
 }
 
 int main()
 {
-	char *str = "ololl";
+	char *str = "lololl";
 	char *set = "l";
 
 	printf("%s\n", ft_strtrim(str, set));
