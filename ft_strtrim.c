@@ -11,21 +11,16 @@ char	*ft_strtrim(char const *s1, char const *set)
 	{
 		i++;
 	}
-	j = ft_strlen((char *)s1);
-	while (s1[j] == ((char *)set )[0])
-	{
-		printf("testj\n");
+	j = ft_strlen((char *)s1) - 1;
+	while (s1[j] == ((char *)set)[0])
 		j--;
-	}
-	printf("i = %d\n", i);
-	printf("j = %lu\n", ft_strlen((char *)s1) - j - i - 1);
-	return (ft_substr(s1, i, ft_strlen((char *)s1) - j));
+	return (ft_substr(s1, i, j));
 }
 
 int main()
 {
-	char *str = "oooell";
-	char *set = "o";
+	char *str = "ololl";
+	char *set = "l";
 
 	printf("%s\n", ft_strtrim(str, set));
 }
