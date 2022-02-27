@@ -5,9 +5,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char *str;
 	size_t i;
 	
+	str = malloc(sizeof(char) * len + 1);
 	if (len > ft_strlen((char *)s))
 		len = ft_strlen((char *)s);
-	str = malloc(sizeof(char) * len + 1);
 	if (start >= ft_strlen((char *)s))
 		return (str);
 	i = -1;
