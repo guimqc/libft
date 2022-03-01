@@ -41,11 +41,16 @@ char **ft_split(const char *s, char c)
 	char **array;
 	int *split_len_arr;
 
+	printf("split count : %zu\n", split_count(s, ','));
+
 	array = malloc(sizeof(char *) * split_count(s, c));
-	split_len_arr = split_len((char *)s, ',');
-	i = 0;
-	while (i < split_count(s, c))
+	split_len_arr = split_len((char *)s, c);
+	i = -1;
+	while (++i < split_count(s, c))
+	{
 		array[i] = malloc(sizeof(char) * split_len_arr[i]);
+		printf("malloc of sizeof(char) * %d\n", split_len_arr[i]);
+	}
 	return (array);
 }
 
@@ -53,8 +58,5 @@ int main()
 {
 	const char *s = ",hello,bonjour,hola,salve,";
 
-	printf("split count : %zu\n", split_count(s, ','));
-
-	int *split_len_arr = split_len(s, ',');
-	printf("len = %d\n", split_len_arr[0]);
+	ft_split(s, ',');
 }
