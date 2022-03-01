@@ -27,11 +27,10 @@ static int *split_len(const char *s, char c)
 	split_len_arr = malloc(sizeof(int) * split_count(s, c));
 	while (i < ft_strlen((char *)s) && ii < split_count(s, c))
 	{
-		if (((char *)s)[i] == c)
-		{
-			
-		}
-		i++;
+		if (((char *)s)[i] == c && i != ft_strlen((char *)s) && i != 0 && i++ != 0)
+			ii++;
+		else if (((char *)s)[i++] != c)
+			split_len_arr[ii]++;
 	}
 	return (split_len_arr);
 }
@@ -42,6 +41,7 @@ char **ft_split(const char *s, char c)
 	char **array;
 
 	array = malloc(sizeof(char *) * split_count(s, c));
+
 
 	return (array);
 }
