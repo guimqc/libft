@@ -20,20 +20,16 @@ static int *split_len(const char *s, char c)
 {
 	size_t i;
 	size_t ii;
-	size_t prev_ii;
 	int *split_len_arr;
 
-	i = 1;
+	i = 0;
 	ii = 0;
-	prev_ii = 0;
 	split_len_arr = malloc(sizeof(int) * split_count(s, c));
 	while (i < ft_strlen((char *)s) && ii < split_count(s, c))
 	{
-		printf("split_len_arr[%zu]\n", ii);
 		if (((char *)s)[i] == c)
 		{
-			printf("found %c at s[%zu]\n", c, i);
-			ii++;
+			
 		}
 		i++;
 	}
@@ -57,5 +53,5 @@ int main()
 	printf("split count : %zu\n", split_count(s, ','));
 
 	int *split_len_arr = split_len(s, ',');
-	// printf("split len[3] = %d\n", split_len_arr[3]);
+	printf("split_len_arr[0] = %d\n", split_len_arr[0]);
 }
