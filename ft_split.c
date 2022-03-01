@@ -37,12 +37,15 @@ static int *split_len(const char *s, char c)
 
 char **ft_split(const char *s, char c)
 {
-	//size_t i;
+	size_t i;
 	char **array;
+	int *split_len_arr;
 
 	array = malloc(sizeof(char *) * split_count(s, c));
-
-
+	split_len_arr = split_len((char *)s, ',');
+	i = 0;
+	while (i < split_count(s, c))
+		array[i] = malloc(sizeof(char) * split_len_arr[i]);
 	return (array);
 }
 
@@ -53,5 +56,5 @@ int main()
 	printf("split count : %zu\n", split_count(s, ','));
 
 	int *split_len_arr = split_len(s, ',');
-	printf("split_len_arr[0] = %d\n", split_len_arr[0]);
+	printf("len = %d\n", split_len_arr[0]);
 }
