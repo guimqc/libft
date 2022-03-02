@@ -33,7 +33,7 @@ char **ft_split(const char *s, char c)
 			count++;
 		else if (((char *)s)[ii] == c && ii != 0 && ii != ft_strlen((char *)s))
 		{
-			arr[i] = malloc(sizeof(char) * count);
+			arr[i] = malloc(sizeof(char) * (count + 1));
 			arr[i] = ft_substr(s, ii - count, count);
 			count  = 0;
 			i++;
@@ -43,13 +43,14 @@ char **ft_split(const char *s, char c)
 	return (arr);
 }
 
-// int main()
-// {
-// 	const char *s = ",hello,bonjour,hola,salve,";
-// 	char **arr = ft_split(s, ',');
-// 	size_t i;
+int main()
+{
+	const char *s = ",hello,bonjour,hola,salve,";
+	char c = ',';
+	char **arr = ft_split(s, c);
+	size_t i;
 
-// 	i = -1;
-// 	while (++i < 4)
-// 		printf("%s\n", arr[i]);
-// }
+	i = -1;
+	while (++i < split_count((char *)s, c))
+		printf("%s\n", arr[i]);
+}
