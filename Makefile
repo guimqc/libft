@@ -17,6 +17,9 @@ all: $(NAME) clean
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
+split:
+	$(CC) $(CFLAGS) ft_split.c ft_strlen.c ft_substr.c && ./a.out
+
 clean:
 	rm -f $(OBJ)
 
