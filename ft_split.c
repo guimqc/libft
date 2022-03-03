@@ -27,15 +27,19 @@ char **ft_split(const char *s, char c)
 	i = 0;
 	ii = 0;
 	count = 0;
-	while (i < split_count((char *)s, c) && ii < ft_strlen((char *)s))
+	while (i < split_count((char *)s, c) && ii < ft_strlen((char *)s) + 1)
 	{
 		if (((char *)s)[ii] != c)
 			count++;
-		else if (((char *)s)[ii] == c && ii != 0 && ii != ft_strlen((char *)s))
+		if ((((char *)s)[ii] == c && ii != 0) || ii == ft_strlen((char *)s))
 		{
 			arr[i] = malloc(sizeof(char) * (count + 1));
+			if (ii == ft_strlen((char *)s))
+				arr[i] = ft_substr(s, ii - count + 1, count);
+			else
 			arr[i] = ft_substr(s, ii - count, count);
 			count  = 0;
+			printf("i = %zu\n", i);
 			i++;
 		}
 		ii++;
@@ -45,7 +49,7 @@ char **ft_split(const char *s, char c)
 
 int main()
 {
-	const char *s = ",hello,bonjour,hola,salve,";
+	const char *s = ",hello,bonjour,hola,salve";
 	char c = ',';
 	char **arr = ft_split(s, c);
 	size_t i;
