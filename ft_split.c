@@ -37,7 +37,7 @@ char **ft_split(const char *s, char c)
 			if (ii == ft_strlen((char *)s))
 				arr[i] = ft_substr(s, ii - char_count + 1, char_count);
 			else
-			arr[i] = ft_substr(s, ii - char_count, char_count);
+				arr[i] = ft_substr(s, ii - char_count, char_count);
 			char_count  = 0;
 			i++;
 		}
