@@ -39,7 +39,6 @@ char **ft_split(const char *s, char c)
 			else
 			arr[i] = ft_substr(s, ii - count, count);
 			count  = 0;
-			printf("i = %zu\n", i);
 			i++;
 		}
 		ii++;
