@@ -22,10 +22,11 @@ static size_t split_count(char *s, char c)
 
 char **ft_split(const char *s, char c)
 {
-	char **arr;
-	size_t i;
-	size_t ii;
-	size_t count;
+	char	*ptr;
+	char	**arr;
+	size_t	i;
+	size_t	ii;
+	size_t	count;
 
 	arr = malloc(sizeof(char *) * split_count((char *)s, c));
 	i = -1;
@@ -37,9 +38,11 @@ char **ft_split(const char *s, char c)
 			count++;
 		if (((char *)s)[i] != c && (((char *)s)[i + 1] == c || i == ft_strlen((char *)s) - 1))
 		{
+			ptr = ft_substr(s, i - count + 1, count);
 			arr[ii] = malloc(sizeof(char) * (count + 1));
-			ft_strlcpy(arr[ii++], ft_substr(s, i - count + 1, count), count + 1);
+			ft_strlcpy(arr[ii++], ptr, count + 1);
 			count = 0;
+			free(ptr);
 		}
 	}
 	return (arr);
