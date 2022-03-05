@@ -20,6 +20,9 @@ $(NAME): $(OBJ)
 split:
 	$(CC) $(CFLAGS) ft_split.c ft_strlen.c ft_substr.c ft_strlcpy.c ft_strlcat.c && ./a.out
 
+itoa:
+	$(CC) $(CFLAGS) ft_itoa.c && ./a.out
+
 clean:
 	rm -f $(OBJ)
 
