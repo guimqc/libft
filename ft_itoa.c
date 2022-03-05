@@ -23,7 +23,7 @@ char    *ft_itoa(int n)
 
 	if (n < 0)
 		n *= -1;
-	s = malloc (sizeof(char) * find_len(n));
+	s = ft_calloc (find_len(n) + 1, sizeof(char));
 	i = find_len(n);
 	while (--i >= 0)
 	{
