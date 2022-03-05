@@ -38,8 +38,7 @@ char **ft_split(const char *s, char c)
 		if (((char *)s)[i] != c && (((char *)s)[i + 1] == c || i == ft_strlen((char *)s) - 1))
 		{
 			arr[ii] = malloc(sizeof(char) * (count + 1));
-			arr[ii] = ft_substr(s, i - count + 1, count);
-			ii++;
+			arr[ii++] = ft_substr(s, i - count + 1, count);
 			count = 0;
 		}
 		i++;
