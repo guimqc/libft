@@ -27,7 +27,7 @@ char **ft_split(const char *s, char c)
 	size_t ii;
 	size_t count;
 
-	arr = malloc(sizeof(char) * split_count((char *)s, c));
+	arr = malloc(sizeof(char *) * split_count((char *)s, c));
 	i = 0;
 	ii = 0;
 	count = 0;
