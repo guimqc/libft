@@ -6,6 +6,8 @@ static int  find_len(int n)
 	int i;
 
 	i = 0;
+	if (n < 0)
+		i++;
 	while (n != 0)
 	{
 		n /= 10;
@@ -33,6 +35,7 @@ char    *ft_itoa(int n)
 
 int main()
 {
-	int x = 234;
+	int x = +234;
+	printf("%i\n", find_len(x));
 	printf("%s\n", ft_itoa(x));
 }
