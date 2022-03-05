@@ -28,10 +28,10 @@ char **ft_split(const char *s, char c)
 	size_t count;
 
 	arr = malloc(sizeof(char *) * split_count((char *)s, c));
-	i = 0;
+	i = -1;
 	ii = 0;
 	count = 0;
-	while ((i < ft_strlen((char *)s)) && (ii < split_count((char *)s, c)))
+	while ((++i < ft_strlen((char *)s)) && (ii < split_count((char *)s, c)))
 	{
 		if (((char *)s)[i] != c)
 			count++;
@@ -41,7 +41,6 @@ char **ft_split(const char *s, char c)
 			arr[ii++] = ft_substr(s, i - count + 1, count);
 			count = 0;
 		}
-		i++;
 	}
 	return (arr);
 }
