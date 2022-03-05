@@ -6,8 +6,6 @@ static int  find_len(int n)
 	int i;
 
 	i = 0;
-	if (n <= 0)
-		i++;
 	while (n != 0)
 	{
 		n /= 10;
@@ -19,14 +17,21 @@ static int  find_len(int n)
 char    *ft_itoa(int n)
 {
 	char *s;
+	int i;
 
 	s = malloc (sizeof(char) * find_len(n));
-
+	i = find_len(n) - 1;
+	while (i >= 0)
+	{
+		s[i] = n % 10 + 48;
+		n /= 10;
+		i--;
+	}
 	return (s);
 }
 
 int main()
 {
-	int x = -1234;
+	int x = 1;
 	printf("%s\n", ft_itoa(x));
 }
