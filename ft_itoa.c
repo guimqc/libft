@@ -19,19 +19,20 @@ char    *ft_itoa(int n)
 	char *s;
 	int i;
 
+	if (n < 0)
+		n *= -1;
 	s = malloc (sizeof(char) * find_len(n));
-	i = find_len(n) - 1;
-	while (i >= 0)
+	i = find_len(n);
+	while (--i >= 0)
 	{
 		s[i] = n % 10 + 48;
 		n /= 10;
-		i--;
 	}
 	return (s);
 }
 
 int main()
 {
-	int x = 1;
+	int x = 234;
 	printf("%s\n", ft_itoa(x));
 }
