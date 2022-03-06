@@ -37,6 +37,5 @@ char    *ft_itoa(int n)
 int main()
 {
 	int x = 234;
-	printf("alloc %i char\n", find_len(x));
 	printf("%s\n", ft_itoa(x));
 }
