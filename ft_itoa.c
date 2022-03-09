@@ -20,22 +20,31 @@ char    *ft_itoa(int n)
 {
 	char *s;
 	int i;
+	int neg;
 
-	if (n < 0)
-		n *= -1;
-	s = ft_calloc (find_len(n) + 1, sizeof(char));
+	neg = 0;
 	i = find_len(n);
+	s = ft_calloc(find_len(n) + 1, sizeof(char));
+	if (n == -2147483648)
+		return (ft_memcpy(s, "-2147483648", 11));
+	if (n < 0)
+	{
+		neg = 1;
+		n *= -1;
+	}
 	s[i] = '\0';
 	while (--i >= 0)
 	{
 		s[i] = n % 10 + 48;
 		n /= 10;
+		if (i == 0 && neg == 1)
+			s[i] = '-';
 	}
 	return (s);
 }
 
-int main()
-{
-	int x = 234;
-	printf("%s\n", ft_itoa(x));
-}
+// int main()
+// {
+// 	int x = -2147483648;
+// 	printf("%s\n", ft_itoa(x));
+// }
