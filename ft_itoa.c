@@ -43,8 +43,8 @@ char    *ft_itoa(int n)
 	return (s);
 }
 
-// int main()
-// {
-// 	int x = -2147483648;
-// 	printf("%s\n", ft_itoa(x));
-// }
+int main()
+{
+	int x = -0;
+	printf("%s\n", ft_itoa(x));
+}
