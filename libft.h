@@ -10,6 +10,7 @@ void *content;
 struct s_list *next;
 } t_list;
 
+
 t_list  *ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(void *content);
 char	*ft_itoa(int n);
@@ -37,6 +38,7 @@ void	*ft_memset(void *str, int c, size_t len);
 void    ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	*ft_memchr(const void *s, int c, size_t n);
+void    ft_lstclear(t_list **lst, void (*del)(void*));
 void    *ft_memcpy(void *dst, const void *src, size_t n);
 void    *ft_memmove(void *dst, const void *src, size_t len);
 void    ft_striteri(char *s, void (*f)(unsigned int, char*));
