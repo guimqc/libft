@@ -4,6 +4,12 @@
 #include <unistd.h>
 #include <stdlib.h>
 
+typedef struct s_list
+{
+void *content;
+struct s_list *next;
+} t_list;
+
 char	*ft_itoa(int n);
 char    *ft_strdup(const char *s1);
 char    *ft_strchr(const char *s, int c);
