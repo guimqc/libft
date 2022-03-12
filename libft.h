@@ -19,6 +19,7 @@ size_t  ft_strlcat(char *dst, const char *src, size_t dstsize);
 size_t  ft_strlcpy(char *dst, const char *src, size_t dstsize);
 void    ft_putchar(char c);
 void    ft_putstr(char *str);
+void    ft_putnbr_fd(int n, int fd);
 void    ft_bzero(void *s, size_t n);
 void    ft_putstr_fd(char *s, int fd);
 void    ft_putchar_fd(char c, int fd);
