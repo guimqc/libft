@@ -20,6 +20,7 @@ size_t  ft_strlcpy(char *dst, const char *src, size_t dstsize);
 void    ft_putchar(char c);
 void    ft_putstr(char *str);
 void    ft_bzero(void *s, size_t n);
+void    ft_putchar_fd(char c, int fd);
 void    *ft_calloc(size_t count, size_t size);
 void	*ft_memset(void *str, int c, size_t len);
 void	*ft_memchr(const void *s, int c, size_t n);
