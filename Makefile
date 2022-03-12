@@ -22,11 +22,14 @@ all: $(NAME) clean
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
+bonus: $(OBJ) $(BONUSOBJ)
+	ar rcs $(NAME) $(OBJ) $(BONUSOBJ) && make clean
+
 split:
 	$(CC) $(CFLAGS) ft_split.c ft_strlen.c ft_substr.c ft_strlcpy.c ft_strlcat.c ft_calloc.c ft_bzero.c && ./a.out
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(BONUSOBJ)
 
 fclean: clean
 	rm -f $(NAME) rm a.out
