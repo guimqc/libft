@@ -1,6 +1,6 @@
 #include "libft.h"
 
-static int  find_len(int n)
+static int	find_len(int n)
 {
 	int i;
 

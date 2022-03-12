@@ -1,6 +1,6 @@
 #include "libft.h"
 
-static int is_valid(char *haystack, char *needle, size_t i, size_t len)
+static int	is_valid(char *haystack, char *needle, size_t i, size_t len)
 {
 	int ii;
 	ii = 0;
