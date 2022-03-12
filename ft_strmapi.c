@@ -8,6 +8,6 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	str = ft_calloc(ft_strlen((char *)s), sizeof(char));
 	i = -1;
 	while (++i < ft_strlen((char *)s))
-		str[i] = f(i, str[i]);
+		str[i] = f(i, s[i]);
 	return (str);
 }
