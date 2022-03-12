@@ -10,6 +10,7 @@ void *content;
 struct s_list *next;
 } t_list;
 
+t_list *ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(void *content);
 char	*ft_itoa(int n);
 char    *ft_strdup(const char *s1);
