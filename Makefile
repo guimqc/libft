@@ -21,9 +21,6 @@ $(NAME): $(OBJ)
 split:
 	$(CC) $(CFLAGS) ft_split.c ft_strlen.c ft_substr.c ft_strlcpy.c ft_strlcat.c ft_calloc.c ft_bzero.c && ./a.out
 
-itoa:
-	$(CC) $(CFLAGS) ft_memcpy.c ft_strlen.c ft_itoa.c ft_calloc.c ft_bzero.c ft_atoi.c ft_strlcpy.c && ./a.out
-
 clean:
 	rm -f $(OBJ)
 

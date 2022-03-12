@@ -1,10 +1,11 @@
 #include "libft.h"
-#include <stdio.h>
 
 static int  find_len(int n)
 {
 	int i;
 
+	if (n == 0)
+		return (1);
 	i = 0;
 	if (n < 0)
 		i++;
@@ -41,10 +42,4 @@ char    *ft_itoa(int n)
 			s[i] = '-';
 	}
 	return (s);
-}
-
-int main()
-{
-	int x = -0;
-	printf("%s\n", ft_itoa(x));
 }
