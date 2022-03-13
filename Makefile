@@ -18,13 +18,13 @@ CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra
 
-all: $(NAME) clean
+all: $(NAME)
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)
 
 bonus: $(OBJ) $(BONUSOBJ)
-	ar rcs $(NAME) $(OBJ) $(BONUSOBJ) && make clean
+	ar rcs $(NAME) $(OBJ) $(BONUSOBJ)
 
 split:
 	$(CC) $(CFLAGS) ft_split.c ft_strlen.c ft_substr.c ft_strlcpy.c ft_calloc.c ft_bzero.c && ./a.out
@@ -33,6 +33,6 @@ clean:
 	rm -f $(OBJ) $(BONUSOBJ)
 
 fclean: clean
-	rm -f $(NAME) rm a.out
+	rm -f $(NAME)
 
 re:	fclean all
