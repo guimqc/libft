@@ -36,6 +36,7 @@ void    *ft_calloc(size_t count, size_t size);
 void	*ft_memset(void *str, int c, size_t len);
 void    ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstadd_front(t_list **lst, t_list *new);
+void    ft_lstiter(t_list *lst, void (*f)(void *));
 void	*ft_memchr(const void *s, int c, size_t n);
 void    ft_lstclear(t_list **lst, void (*del)(void*));
 void    ft_lstdelone(t_list *lst, void (*del)(void*));
