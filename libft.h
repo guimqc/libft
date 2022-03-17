@@ -12,6 +12,7 @@ struct s_list *next;
 
 t_list  *ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(void *content);
+t_list  *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*ft_itoa(int n);
 char    *ft_strdup(const char *s1);
 char	*ft_strchr(const char *s, int c);
