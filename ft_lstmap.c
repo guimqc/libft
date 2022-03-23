@@ -3,19 +3,32 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list *arr;
+	(void) lst;
+	(void) f;
 	(void) del;
 
-	arr = ft_lstnew(f(lst->content));
-	while (lst)
-	{
-		
-	}
-	return (arr);
+	return (lst);
 }
 
 int main()
 {
-	t_list *init = ft_lstnew((int *)234);
-	printf("%p\n", init->content); // = 0xea = 234
+	t_list *a = ft_lstnew("salve");
+	t_list *b = ft_lstnew("hello");
+	t_list *c = ft_lstnew("bonjour");
+	t_list *d = ft_lstnew("hola");
+	t_list *e = ft_lstnew((int *)97);
+
+	a->next = b;
+	b->next = c;
+	c->next = d;
+	d->next = e;
+	e->next = NULL;
+
+	t_list *curr = a;
+
+	while (curr)
+	{
+		printf("%s\n", (char *)curr->content);
+		curr = curr->next;
+	}
 }
