@@ -1,5 +1,4 @@
 #include "libft.h"
-#include <stdio.h>
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
@@ -16,27 +15,4 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		lst = lst->next;
 	}
 	return (new_head);
-}
-
-int main()
-{
-	t_list *a = ft_lstnew(ft_itoa(97));
-	t_list *b = ft_lstnew(ft_itoa(102));
-	t_list *c = ft_lstnew(ft_itoa(465));
-	t_list *d = ft_lstnew(ft_itoa(6));
-	t_list *e = ft_lstnew(ft_itoa(34));
-
-	a->next = b;
-	b->next = c;
-	c->next = d;
-	d->next = e;
-	e->next = NULL;
-
-	t_list *curr = a;
-
-	while (curr)
-	{
-		printf("%s\n", (char *)curr->content);
-		curr = curr->next;
-	}
 }
