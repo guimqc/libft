@@ -1,7 +1,7 @@
 #include "libft.h"
 #include <stdio.h>
 
-static size_t split_count(char *s, char c)
+static size_t	split_count(char *s, char c)
 {
 	size_t i;
 	size_t split_count;
@@ -20,14 +20,14 @@ static size_t split_count(char *s, char c)
 	return (split_count);
 }
 
-static char **alloc_arr(char *s, char c)
+static char	**alloc_arr(char *s, char c)
 {
 	char **arr;
 	size_t i;
 	size_t ii;
 	size_t count;
 
-	arr = ft_calloc(split_count(s, c), sizeof(char *));
+	arr = ft_calloc(split_count(s, c) + 1, sizeof(char *));
 	i = -1;
 	ii = 0;
 	count = 0;
@@ -44,7 +44,7 @@ static char **alloc_arr(char *s, char c)
 	return (arr);
 }
 
-char **ft_split(const char *s, char c)
+char	**ft_split(const char *s, char c)
 {
 	char	**arr;
 	size_t i;
@@ -61,17 +61,17 @@ char **ft_split(const char *s, char c)
 			arr[ii][count++] = s[i];
 		if (s[i] == c && s[i - 1] != c && i != 0)
 		{
-			arr[ii][count] = '\0';
+			arr[ii++][count] = '\0';
 			count = 0;
-			ii++;
 		}
 	}
+	arr[ii] = 0;
 	return (arr);
 }
 
 int main()
 {
-	const char *s = ",,hello,,,bonjour,,,hola,,,,,salve,,";
+	const char *s = "hello,,,bonjour,,,hola,,,,,salve,,";
 	char c = ',';
 	char **arr = ft_split(s, c);
 
