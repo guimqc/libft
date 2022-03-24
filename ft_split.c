@@ -59,26 +59,12 @@ char	**ft_split(const char *s, char c)
 	{
 		if (s[i] != c)
 			arr[ii][count++] = s[i];
-		if (s[i] == c && s[i - 1] != c && i != 0)
+		if (s[i] == c && s[i - 1] != c && i != 0 && ii < split_count((char *)s, c) - 1)
 		{
 			arr[ii++][count] = '\0';
 			count = 0;
 		}
 	}
 	arr[++ii] = 0;
-	// printf("%zu\n", ii);
 	return (arr);
 }
-
-// int main()
-// {
-// 	const char *s = "hello,,,bonjour,,,hola,,,,,salve";
-// 	char c = ',';
-// 	char **arr = ft_split(s, c);
-
-// 	size_t i;
-// 	i = -1;
-// 	while (++i < split_count((char *)s, c))
-// 		printf("%s\n", arr[i]);
-// }
-// make split to test
