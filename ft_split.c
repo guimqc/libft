@@ -65,19 +65,19 @@ char	**ft_split(const char *s, char c)
 			count = 0;
 		}
 	}
-	arr[ii] = 0;
+	arr[++ii] = 0;
 	return (arr);
 }
 
-int main()
-{
-	const char *s = "hello,,,bonjour,,,hola,,,,,salve,,";
-	char c = ',';
-	char **arr = ft_split(s, c);
+// int main()
+// {
+// 	const char *s = ",,,hello,,,bonjour,,,hola,,,,,salve,,";
+// 	char c = ',';
+// 	char **arr = ft_split(s, c);
 
-	size_t i;
-	i = -1;
-	while (++i < split_count((char *)s, c))
-		printf("%s\n", arr[i]);
-}
+// 	size_t i;
+// 	i = -1;
+// 	while (++i < split_count((char *)s, c))
+// 		printf("%s\n", arr[i]);
+// }
 // make split to test
