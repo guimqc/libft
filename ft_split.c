@@ -46,6 +46,7 @@ char **ft_split(const char *s, char c)
 			free(ptr);
 		}
 	}
+	arr[ii] = 0;
 	return (arr);
 }
 
