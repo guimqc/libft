@@ -29,6 +29,9 @@ bonus: $(OBJ) $(BONUSOBJ)
 split:
 	$(CC) $(CFLAGS) ft_split.c ft_strlen.c ft_substr.c ft_strlcpy.c ft_calloc.c ft_bzero.c && ./a.out
 
+lstmap:
+	$(CC) $(CFLAGS) ft_lstmap.c ft_lstnew.c ft_calloc.c ft_bzero.c ft_itoa.c ft_memcpy.c ft_lstadd_back.c ft_lstlast.c&& ./a.out
+
 clean:
 	rm -f $(OBJ) $(BONUSOBJ)
 
