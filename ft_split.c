@@ -1,5 +1,4 @@
 #include "libft.h"
-#include <stdio.h>
 
 static size_t	split_count(char *s, char c)
 {
