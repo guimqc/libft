@@ -20,7 +20,7 @@ static size_t split_count(char *s, char c)
 	return (split_count);
 }
 
-char **alloc(char *s, char c)
+static char **alloc_arr(char *s, char c)
 {
 	char **arr;
 	size_t i;
@@ -47,21 +47,36 @@ char **alloc(char *s, char c)
 char **ft_split(const char *s, char c)
 {
 	char	**arr;
+	size_t i;
+	size_t ii;
+	size_t count;
 
-	arr = alloc((char *)s, c);
-
+	arr = alloc_arr((char *)s, c);
+	i = -1;
+	ii = 0;
+	count = 0;
+	while (++i < ft_strlen((char *)s))
+	{
+		if (s[i] != c)
+			arr[ii][count++] = s[i];
+		if (s[i] == c && s[i - 1] != c && i != 0)
+		{
+			count = 0;
+			ii++;
+		}
+	}
 	return (arr);
 }
 
-int main()
-{
-	const char *s = "hello,,,bonjour,,,hola,,,,,salve";
-	char c = ',';
-	char **arr = ft_split(s, c);
+// int main()
+// {
+// 	const char *s = ",,hello,,,bonjour,,,hola,,,,,salve";
+// 	char c = ',';
+// 	char **arr = ft_split(s, c);
 
-	size_t i;
-	i = -1;
-	while (++i < split_count((char *)s, c))
-		printf("%s\n", arr[i]);
-}
+// 	size_t i;
+// 	i = -1;
+// 	while (++i < split_count((char *)s, c))
+// 		printf("%s\n", arr[i]);
+// }
 // make split to test
