@@ -65,6 +65,7 @@ char	**ft_split(const char *s, char c)
 			count = 0;
 		}
 	}
+	//printf("%zu\n", ii);
 	arr[++ii] = 0;
 	return (arr);
 }
