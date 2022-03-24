@@ -1,25 +1,21 @@
 #include "libft.h"
-#include <stdio.h>
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char num;
+	int num;
+	if (n == -2147483648)
+	{
+		ft_putstr_fd("-2147483648", fd);
+		return ;
+	}
 	if (n < 0)
 	{
-		write(fd, "-", 1);
+		ft_putchar_fd('-', fd);
 		n *= -1;
 	}
-	while (n > 0)
-	{
-		num = (n % 10) + 48;
-		write(fd, &num, 1);
-		n /= 10;
-	}
-}
-
-int main()
-{
-	int n = 1234;
-
-	ft_putnbr_fd(n, 1);
+	num = (n % 10);
+	n = n / 10;
+	if (n > 0)
+		ft_putnbr_fd(n, fd);	
+	ft_putchar_fd(num + 48, fd);
 }
