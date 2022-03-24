@@ -65,14 +65,14 @@ char	**ft_split(const char *s, char c)
 			count = 0;
 		}
 	}
-	//printf("%zu\n", ii);
 	arr[++ii] = 0;
+	// printf("%zu\n", ii);
 	return (arr);
 }
 
 // int main()
 // {
-// 	const char *s = ",,,hello,,,bonjour,,,hola,,,,,salve,,";
+// 	const char *s = "hello,,,bonjour,,,hola,,,,,salve";
 // 	char c = ',';
 // 	char **arr = ft_split(s, c);
 
