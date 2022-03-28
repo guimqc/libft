@@ -1,11 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gvial <marvin@42quebec.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/28 10:22:56 by gvial             #+#    #+#             */
+/*   Updated: 2022/03/28 10:23:34 by gvial            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	(void) del;
-	t_list *new_head;
-	t_list *new;
+	t_list	*new_head;
+	t_list	*new;
 
+	(void) del;
 	new_head = ft_lstnew(f(lst->content));
 	lst = lst->next;
 	while (lst)

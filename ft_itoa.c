@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gvial <marvin@42quebec.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/28 10:22:56 by gvial             #+#    #+#             */
+/*   Updated: 2022/03/28 10:23:34 by gvial            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
 static int	find_len(int n)
 {
-	int i;
+	int	i;
 
 	if (n == 0)
 		return (1);
@@ -17,11 +28,11 @@ static int	find_len(int n)
 	return (i);
 }
 
-char    *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	char *s;
-	int i;
-	int neg;
+	char	*s;
+	int		i;
+	int		neg;
 
 	neg = 0;
 	i = find_len(n);

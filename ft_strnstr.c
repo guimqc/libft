@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gvial <marvin@42quebec.com>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/28 10:22:56 by gvial             #+#    #+#             */
+/*   Updated: 2022/03/28 10:23:34 by gvial            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
 static int	is_valid(char *haystack, char *needle, size_t i, size_t len)
 {
-	int ii;
+	int	ii;
+
 	ii = 0;
 	while (haystack[i] && needle[ii])
 		if (haystack[i++] != needle[ii++] || i > len)
@@ -10,9 +22,9 @@ static int	is_valid(char *haystack, char *needle, size_t i, size_t len)
 	return (1);
 }
 
-char    *ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t i;
+	size_t	i;
 
 	if (ft_strlen((char *)needle) == 0)
 		return ((char *)haystack);
