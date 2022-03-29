@@ -13,11 +13,11 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int	dstsize;
+	int	len;
 
-	dstsize = ft_strlen((char *)s);
-	while (dstsize > -1)
-		if (s[dstsize--] == (char)c)
-			return ((char *)s + ++dstsize);
+	len = ft_strlen((char *)s);
+	while (len > -1)
+		if (s[len--] == (char)c)
+			return ((char *)s + ++len);
 	return (NULL);
 }
