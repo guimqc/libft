@@ -82,14 +82,3 @@ char	**ft_split(const char *s, char c)
 	arr[++ii] = 0;
 	return (arr);
 }
-
-int main()
-{
-	char **arr = ft_split("bonjour,,hello,,salve,,hola,,", ',');
-
-	int i = -1;
-	while (arr[++i])
-	{
-		printf("%s\n", arr[i]);
-	}
-}
