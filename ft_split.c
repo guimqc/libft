@@ -28,7 +28,6 @@ static size_t	split_count(char *s, char c)
 			split_count++;
 		i++;
 	}
-	//printf("split count : %zu\n", split_count);
 	return (split_count);
 }
 
@@ -80,17 +79,17 @@ char	**ft_split(const char *s, char c)
 		}
 	}
 	arr[++ii] = 0;
-	//printf("last tab : %zu\n", ii);
+	printf("last tab : %zu\n", ii);
 	return (arr);
 }
 
-// int main()
-// {
-// 	const char *s = "     ";
-// 	char **arr = ft_split(s, ' ');
-// 	int i = -1;
-// 	while (arr[++i])
-// 	{
-// 		printf("%s\n", arr[i]);
-// 	}
-// }
+int main()
+{
+	const char *s = "     ";
+	char **arr = ft_split(s, ' ');
+	int i = -1;
+	while (arr[++i])
+	{
+		printf("%s\n", arr[i]);
+	}
+}
