@@ -12,10 +12,9 @@
 #include "libft.h"
 #include <stdio.h>
 
-// only problem left is the case where *s = "" (or !s)
-// those 2 cases should return NULL, because the allocation "failed".
+// only problems left are the case where *s = ""
+// and the case where the string is composed of the delimiter only
 
-// split_count always return the right result
 static size_t	split_count(char *s, char c)
 {
 	size_t	i;
@@ -83,7 +82,6 @@ char	**ft_split(const char *s, char c)
 		}
 	}
 	arr[++ii] = 0;
-	// printf("%zu\n", ii);
 	return (arr);
 }
 
