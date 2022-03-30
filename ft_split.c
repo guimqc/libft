@@ -108,8 +108,7 @@ null terminate each word
 null terminate the **arr
 
 exceptions :
-- manage extremes
+- manage delimiter at both extremes
 - *s is only composed of delimiter or !s -->
-- 
 
 */
