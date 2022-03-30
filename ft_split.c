@@ -12,6 +12,10 @@
 #include "libft.h"
 #include <stdio.h>
 
+// only problem left is the case where *s = "" (or !s)
+// those 2 cases should return NULL, because the allocation "failed".
+
+// split_count always return the right result
 static size_t	split_count(char *s, char c)
 {
 	size_t	i;
@@ -79,13 +83,13 @@ char	**ft_split(const char *s, char c)
 		}
 	}
 	arr[++ii] = 0;
-	//printf("last tab : %zu\n", ii);
+	// printf("%zu\n", ii);
 	return (arr);
 }
 
 // int main()
 // {
-// 	const char *s = "     ";
+// 	const char *s = "";
 // 	char **arr = ft_split(s, ' ');
 // 	int i = -1;
 // 	while (arr[++i])
@@ -93,3 +97,19 @@ char	**ft_split(const char *s, char c)
 // 		printf("%s\n", arr[i]);
 // 	}
 // }
+
+/* 
+
+count # of word to alloc
+count # of char to alloc per word
+alloc the **arr
+fill the **arr with the words
+null terminate each word
+null terminate the **arr
+
+exceptions :
+- manage extremes
+- *s is only composed of delimiter or !s -->
+- 
+
+*/
