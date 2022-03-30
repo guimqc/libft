@@ -22,7 +22,7 @@ static size_t	split_count(char *s, char c)
 	i = 0;
 	while (i < ft_strlen(s))
 	{
-		if ((s[i] == c && s[i - 1] != c && i != 0)
+		if ((i != 0 && s[i] == c && s[i - 1] != c)
 			|| (i == ft_strlen(s) - 1 && s[i] != c))
 			split_count++;
 		i++;
@@ -45,7 +45,7 @@ static char	**alloc_arr(char *s, char c)
 	{
 		if (s[i] != c)
 			count++;
-		if ((s[i] == c && s[i - 1] != c && i != 0)
+		if ((i != 0 && s[i] == c && s[i - 1] != c)
 			|| (i == ft_strlen(s) - 1 && s[i] != c))
 		{
 			arr[ii++] = ft_calloc(count + 1, sizeof(char));
@@ -70,7 +70,7 @@ char	**ft_split(const char *s, char c)
 	{
 		if (s[i] != c)
 			arr[ii][count++] = s[i];
-		if (s[i] == c && s[i - 1] != c && i != 0
+		if (i != 0 && s[i] == c && s[i - 1] != c
 			&& ii < split_count((char *)s, c) - 1)
 		{
 			arr[ii++][count] = '\0';
