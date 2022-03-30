@@ -10,6 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include <stdio.h>
 
 static size_t	split_count(char *s, char c)
 {
@@ -77,6 +78,18 @@ char	**ft_split(const char *s, char c)
 			count = 0;
 		}
 	}
+	printf("%zu\n", ii);
 	arr[++ii] = 0;
 	return (arr);
+}
+
+int main()
+{
+	char **arr = ft_split("bonjour,,hello,,salve,,hola,,", ',');
+
+	int i = -1;
+	while (arr[++i])
+	{
+		printf("%s\n", arr[i]);
+	}
 }
