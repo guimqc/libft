@@ -12,9 +12,6 @@
 #include "libft.h"
 #include <stdio.h>
 
-// only problems left are the case where *s = ""
-// and the case where the string is composed of the delimiter only
-
 static size_t	split_count(char *s, char c)
 {
 	size_t	i;
@@ -34,79 +31,19 @@ static size_t	split_count(char *s, char c)
 	return (split_count);
 }
 
-static char	**alloc_arr(char *s, char c)
-{
-	char	**arr;
-	size_t	i;
-	size_t	ii;
-	size_t	count;
-
-	arr = ft_calloc(split_count(s, c) + 1, sizeof(char *));
-	i = -1;
-	ii = 0;
-	count = 0;
-	while (++i < ft_strlen(s))
-	{
-		if (s[i] != c)
-			count++;
-		if ((i != 0 && s[i] == c && s[i - 1] != c)
-			|| (i == ft_strlen(s) - 1 && s[i] != c))
-		{
-			arr[ii++] = ft_calloc(count + 1, sizeof(char));
-			count = 0;
-		}
-	}
-	return (arr);
-}
-
 char	**ft_split(const char *s, char c)
 {
-	char	**arr;
-	size_t	i;
-	size_t	ii;
-	size_t	count;
-
-	arr = alloc_arr((char *)s, c);
-	i = -1;
-	ii = 0;
-	count = 0;
-	while (++i < ft_strlen((char *)s))
-	{
-		if (s[i] != c)
-			arr[ii][count++] = s[i];
-		if (i != 0 && s[i] == c && s[i - 1] != c
-			&& ii < split_count((char *)s, c) - 1)
-		{
-			arr[ii++][count] = '\0';
-			count = 0;
-		}
-	}
-	arr[++ii] = 0;
-	return (arr);
+	(void) s;
+	(void) c;
 }
 
 // int main()
 // {
-// 	const char *s = "";
-// 	char **arr = ft_split(s, ' ');
+// 	const char *s = ",,hello,,bonjour,,hola,,salve,,";
+// 	char **arr = ft_split(s, ',');
 // 	int i = -1;
 // 	while (arr[++i])
 // 	{
 // 		printf("%s\n", arr[i]);
 // 	}
 // }
-
-/* 
-
-count # of word to alloc
-count # of char to alloc per word
-alloc the **arr
-fill the **arr with the words
-null terminate each word
-null terminate the **arr
-
-exceptions :
-- manage delimiter at both extremes
-- *s is only composed of delimiter or !s -->
-
-*/
