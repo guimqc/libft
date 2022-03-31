@@ -39,8 +39,8 @@ static char	**alloc_arr(char *s, char c)
 	size_t	count;
 
 
-	arr = ft_calloc(split_count(s, c) + 1, sizeof(char *));
-	i = -1;
+	arr = ft_calloc(split_count(s, c) + 1, sizeof(char *)); // I alloc at least one char* even if split_count == 0
+	i = -1;													// should probly not, but if I set arr to NULL when split_count == 0 and return it to split, segfault
 	ii = 0;
 	count = 0;
 	while (++i < ft_strlen(s))
@@ -83,16 +83,16 @@ char	**ft_split(const char *s, char c)
 	return (arr);
 }
 
-// int main()
-// {
-// 	char **arr = ft_split("    ", ' ');
-// 	printf("arr[0] = %s\n", arr[0]); // = (null)
-// 	printf("arr[1] = %s\n", arr[1]); // = (null)
+int main()
+{
+	char **arr = ft_split("    ", ' ');
+	printf("arr[0] = %s\n", arr[0]); // = (null)
+	printf("arr[1] = %s\n", arr[1]); // = (null)
 
-// 	arr = ft_split("", ' ');
-// 	printf("arr[0] = %s\n", arr[0]); // = (null)
-// 	printf("arr[1] = %s\n", arr[1]); // = (null)
-// }
+	arr = ft_split("", ' ');
+	printf("arr[0] = %s\n", arr[0]); // = (null)
+	printf("arr[1] = %s\n", arr[1]); // = (null)
+}
 
 // two cases where the tester still fails me :
 // - str = ""
