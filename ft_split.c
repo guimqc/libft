@@ -12,10 +12,6 @@
 #include "libft.h"
 #include <stdio.h>
 
-// still get error in cases :
-// - str = ""
-// - str = ",,,,,," and delimiter = ',' (..str is composed of delimiter only)
-
 static size_t	split_count(char *s, char c)
 {
 	size_t	i;
@@ -41,6 +37,7 @@ static char	**alloc_arr(char *s, char c)
 	size_t	i;
 	size_t	ii;
 	size_t	count;
+
 
 	arr = ft_calloc(split_count(s, c) + 1, sizeof(char *));
 	i = -1;
@@ -82,15 +79,23 @@ char	**ft_split(const char *s, char c)
 			count = 0;
 		}
 	}
-	arr[++ii] = 0;
+	if (ft_strlen((char *)s) > 0)
+		arr[++ii] = 0;
 	return (arr);
 }
 
 int main()
 {
-	const char *s = "";
-	char **arr = ft_split(s, ' ');
+	char **arr = ft_split("    ", ' ');
+	printf("arr[0] = %s\n", arr[0]); // = (null)
+	printf("arr[1] = %s\n", arr[1]); // = (null)
 
-	printf("arr[0] = %s\n", arr[0]);
-	printf("arr[1] = %s\n", arr[1]);
+	arr = ft_split("", ' ');
+	printf("arr[0] = %s\n", arr[0]); // = (null)
+	printf("arr[1] = %s\n", arr[1]); // = (null)
 }
+
+// two cases where the tester still fails me :
+// - str = ""
+// - str = ",,,,,," and delimiter = ',' (..str is composed of the delimiter char only)
+// if i run those cases, the returned arrays are just NULL filled. Same as functions of older student's that already passed moulinette
