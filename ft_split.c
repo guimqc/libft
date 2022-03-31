@@ -38,11 +38,10 @@ static char	**alloc_arr(char *s, char c)
 	size_t	ii;
 	size_t	count;
 
-
-	arr = ft_calloc(split_count(s, c) + 1, sizeof(char *)); // I alloc at least one char* even if split_count == 0
-	i = -1;													// should probly not, but if I set arr to NULL when split_count == 0 and return it to split, segfault
+	i = -1;
 	ii = 0;
 	count = 0;
+	arr = ft_calloc(split_count(s, c) + 1, sizeof(char *));
 	while (++i < ft_strlen(s))
 	{
 		if (s[i] != c)
@@ -65,6 +64,11 @@ char	**ft_split(const char *s, char c)
 	size_t	count;
 
 	arr = alloc_arr((char *)s, c);
+	if (split_count((char *)s, c) == 0)
+	{
+		*arr = 0;
+		return (arr);
+	}
 	i = -1;
 	ii = 0;
 	count = 0;
@@ -82,19 +86,3 @@ char	**ft_split(const char *s, char c)
 	arr[++ii] = 0;
 	return (arr);
 }
-
-int main()
-{
-	char **arr = ft_split("    ", ' ');
-	printf("arr[0] = %s\n", arr[0]); // = (null)
-	printf("arr[1] = %s\n", arr[1]); // = (null)
-
-	arr = ft_split("", ' ');
-	printf("arr[0] = %s\n", arr[0]); // = (null)
-	printf("arr[1] = %s\n", arr[1]); // = (null)
-}
-
-// two cases where the tester still fails me :
-// - str = ""
-// - str = ",,,,,," and delimiter = ',' (..str is composed of the delimiter char only)
-// if i run those cases, the returned arrays are just NULL filled. Same as functions of older student's that already passed moulinette
