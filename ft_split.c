@@ -86,3 +86,14 @@ char	**ft_split(const char *s, char c)
 	arr[++ii] = 0;
 	return (arr);
 }
+
+1. count # of words to use later
+2. count # of chars per word to use later
+3. alloc the **arr : # of words first (char *), then # of char per word (char)
+4. fill the array, NULL terminating each string and NULL terminating the **arr too at the end
+
+5. if their is no words too alloc return the **arr with a NULL or 0
+
+   [0]      [1]      [2]         [3] = NULL
+
+["hello"] ["hola"] ["salve"]
