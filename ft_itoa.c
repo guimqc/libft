@@ -37,6 +37,8 @@ char	*ft_itoa(int n)
 	neg = 0;
 	i = find_len(n);
 	s = ft_calloc(find_len(n) + 1, sizeof(char));
+	if (!s)
+		return (NULL);
 	if (n == -2147483648)
 		return (ft_memcpy(s, "-2147483648", 11));
 	if (n < 0)

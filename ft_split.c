@@ -41,6 +41,8 @@ static char	**alloc_arr(char *s, char c)
 	ii = 0;
 	count = 0;
 	arr = ft_calloc(split_count(s, c) + 1, sizeof(char *));
+	if (!arr)
+		return (NULL);
 	while (++i < ft_strlen(s))
 	{
 		if (s[i] != c)
@@ -49,6 +51,8 @@ static char	**alloc_arr(char *s, char c)
 			|| (i == ft_strlen(s) - 1 && s[i] != c))
 		{
 			arr[ii++] = ft_calloc(count + 1, sizeof(char));
+			if (!arr[ii - 1])
+				return (NULL);
 			count = 0;
 		}
 	}

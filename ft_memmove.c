@@ -17,6 +17,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	char	*temp;
 
 	temp = ft_calloc(len, sizeof(char));
+	if (!temp)
+		return (NULL);
 	i = -1;
 	while (++i < len)
 		((char *)temp)[i] = ((char *)src)[i];
