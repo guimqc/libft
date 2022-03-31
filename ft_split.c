@@ -12,6 +12,10 @@
 #include "libft.h"
 #include <stdio.h>
 
+// still get error in cases :
+// - str = ""
+// - str = ",,,,,," and delimiter = ',' (..str is composed of delimiter only)
+
 static size_t	split_count(char *s, char c)
 {
 	size_t	i;
@@ -31,19 +35,62 @@ static size_t	split_count(char *s, char c)
 	return (split_count);
 }
 
-char	**ft_split(const char *s, char c)
+static char	**alloc_arr(char *s, char c)
 {
-	(void) s;
-	(void) c;
+	char	**arr;
+	size_t	i;
+	size_t	ii;
+	size_t	count;
+
+	arr = ft_calloc(split_count(s, c) + 1, sizeof(char *));
+	i = -1;
+	ii = 0;
+	count = 0;
+	while (++i < ft_strlen(s))
+	{
+		if (s[i] != c)
+			count++;
+		if ((i != 0 && s[i] == c && s[i - 1] != c)
+			|| (i == ft_strlen(s) - 1 && s[i] != c))
+		{
+			arr[ii++] = ft_calloc(count + 1, sizeof(char));
+			count = 0;
+		}
+	}
+	return (arr);
 }
 
-// int main()
-// {
-// 	const char *s = ",,hello,,bonjour,,hola,,salve,,";
-// 	char **arr = ft_split(s, ',');
-// 	int i = -1;
-// 	while (arr[++i])
-// 	{
-// 		printf("%s\n", arr[i]);
-// 	}
-// }
+char	**ft_split(const char *s, char c)
+{
+	char	**arr;
+	size_t	i;
+	size_t	ii;
+	size_t	count;
+
+	arr = alloc_arr((char *)s, c);
+	i = -1;
+	ii = 0;
+	count = 0;
+	while (++i < ft_strlen((char *)s))
+	{
+		if (s[i] != c)
+			arr[ii][count++] = s[i];
+		if (i != 0 && s[i] == c && s[i - 1] != c
+			&& ii < split_count((char *)s, c) - 1)
+		{
+			arr[ii++][count] = '\0';
+			count = 0;
+		}
+	}
+	arr[++ii] = 0;
+	return (arr);
+}
+
+int main()
+{
+	const char *s = "";
+	char **arr = ft_split(s, ' ');
+
+	printf("arr[0] = %s\n", arr[0]);
+	printf("arr[1] = %s\n", arr[1]);
+}
