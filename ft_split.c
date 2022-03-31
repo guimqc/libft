@@ -55,19 +55,12 @@ static char	**alloc_arr(char *s, char c)
 	return (arr);
 }
 
-char	**ft_split(const char *s, char c)
+char	**too_many_lines(char **arr, char *s, char c)
 {
-	char	**arr;
 	size_t	i;
 	size_t	ii;
 	size_t	count;
 
-	arr = alloc_arr((char *)s, c);
-	if (split_count((char *)s, c) == 0)
-	{
-		*arr = 0;
-		return (arr);
-	}
 	i = -1;
 	ii = 0;
 	count = 0;
@@ -84,4 +77,17 @@ char	**ft_split(const char *s, char c)
 	}
 	arr[++ii] = 0;
 	return (arr);
+}
+
+char	**ft_split(const char *s, char c)
+{
+	char	**arr;
+
+	arr = alloc_arr((char *)s, c);
+	if (split_count((char *)s, c) == 0)
+	{
+		*arr = 0;
+		return (arr);
+	}
+	return (too_many_lines(arr, (char *)s, c));
 }
