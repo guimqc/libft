@@ -79,21 +79,20 @@ char	**ft_split(const char *s, char c)
 			count = 0;
 		}
 	}
-	if (ft_strlen((char *)s) > 0)
-		arr[++ii] = 0;
+	arr[++ii] = 0;
 	return (arr);
 }
 
-int main()
-{
-	char **arr = ft_split("    ", ' ');
-	printf("arr[0] = %s\n", arr[0]); // = (null)
-	printf("arr[1] = %s\n", arr[1]); // = (null)
+// int main()
+// {
+// 	char **arr = ft_split("    ", ' ');
+// 	printf("arr[0] = %s\n", arr[0]); // = (null)
+// 	printf("arr[1] = %s\n", arr[1]); // = (null)
 
-	arr = ft_split("", ' ');
-	printf("arr[0] = %s\n", arr[0]); // = (null)
-	printf("arr[1] = %s\n", arr[1]); // = (null)
-}
+// 	arr = ft_split("", ' ');
+// 	printf("arr[0] = %s\n", arr[0]); // = (null)
+// 	printf("arr[1] = %s\n", arr[1]); // = (null)
+// }
 
 // two cases where the tester still fails me :
 // - str = ""
