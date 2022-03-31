@@ -14,6 +14,8 @@ int	ft_atoi(const char *str)
 	int	i;
 	int	sign;
 	int	result;
+    int test;
+    (void) test;
 
 	sign = 1;
 	i = 0;
