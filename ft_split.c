@@ -88,6 +88,8 @@ char	**ft_split(const char *s, char c)
 	char	**arr;
 
 	arr = alloc_arr((char *)s, c);
+	if (!arr)
+		return (NULL);
 	if (split_count((char *)s, c) == 0)
 	{
 		*arr = 0;
