@@ -15,21 +15,31 @@
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
+	size_t i;
+	size_t j;
+
 	if (!(*needle))
 		return ((char *)haystack);
-	while (len > 0)
+	i = 0;
+	while (i < len)
 	{
-		if (haystack[len - 1] == needle[ft_strlen((char *)needle - 1)])
-			printf("%c\n", haystack[len - 1]);
-		len--;
+		if (haystack[i] == needle[0])
+		{
+			j = 0;
+			while (j < ft_strlen(needle))
+			{
+				if ()
+			}
+		}
+		i++;
 	}
 	return (NULL);
 }
 
 int main()
 {
-	const char *haystack = "this is a test";
-	const char *needle = "test";
+	const char *haystack = "i am tired of this";
+	const char *needle = "red";
 
 	printf("%s\n", ft_strnstr(haystack, needle, 15));
 }
