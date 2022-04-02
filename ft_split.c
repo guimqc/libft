@@ -59,7 +59,7 @@ static char	**alloc_arr(char *s, char c)
 	return (arr);
 }
 
-char	**too_many_lines(char **arr, char *s, char c)
+char	**fill_arr(char **arr, char *s, char c)
 {
 	size_t	i;
 	size_t	ii;
@@ -95,5 +95,5 @@ char	**ft_split(const char *s, char c)
 		*arr = 0;
 		return (arr);
 	}
-	return (too_many_lines(arr, (char *)s, c));
+	return (fill_arr(arr, (char *)s, c));
 }
