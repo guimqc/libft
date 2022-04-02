@@ -35,3 +35,5 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 				return (&((char *)haystack)[i]);
 	return (NULL);
 }
+
+// correct this and libft is moulinette approuved
