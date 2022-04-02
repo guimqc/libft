@@ -10,36 +10,30 @@
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
+
+static int	is_valid(char *haystack, char *needle, size_t i, size_t len)
+{
+	int	ii;
+
+	ii = 0;
+	while (haystack[i] && needle[ii])
+		if (haystack[i++] != needle[ii++] || i > len)
+			return (0);
+	return (1);
+}
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
 
-	if (!(*needle))
+	if (ft_strlen((char *)needle) > ft_strlen((char *)haystack))
+		return (NULL);
+	if (ft_strlen((char *)needle) == 0)
 		return ((char *)haystack);
-	i = 0;
-	while (i < len)
-	{
-		if (haystack[i] == needle[0])
-		{
-			j = 0;
-			while (j < ft_strlen(needle))
-			{
-				if ()
-			}
-		}
-		i++;
-	}
+	i = -1;
+	while (++i < len && ((char *)haystack)[i])
+		if (((char *)haystack)[i] == ((char *)needle)[0])
+			if (is_valid((char *)haystack, (char *)needle, i, len) == 1)
+				return (&((char *)haystack)[i]);
 	return (NULL);
-}
-
-int main()
-{
-	const char *haystack = "i am tired of this";
-	const char *needle = "red";
-
-	printf("%s\n", ft_strnstr(haystack, needle, 15));
 }
