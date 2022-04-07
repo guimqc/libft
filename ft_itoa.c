@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-static int	find_len(int n)
+static int	find_len(long n)
 {
 	int	i;
 
@@ -28,7 +28,7 @@ static int	find_len(int n)
 	return (i);
 }
 
-char	*ft_itoa(int n)
+char	*ft_itoa(long n)
 {
 	char	*s;
 	int		i;
