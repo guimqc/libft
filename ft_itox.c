@@ -12,7 +12,7 @@
 #include "libft.h"
 #include <stdio.h>
 
-static int	find_len(unsigned int n)
+static int	find_len(long n)
 {
 	int	len;
 
@@ -27,7 +27,7 @@ static int	find_len(unsigned int n)
 	return (len);
 }
 
-char	*ft_itox(unsigned int n, int caps)
+char	*ft_itox(long n, int caps)
 {
 	int		len;
 	char	*hex;
