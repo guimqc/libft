@@ -32,6 +32,8 @@ char	*ft_itox(long n, int caps)
 	char	*hex;
 	char	*result;
 
+	if (n == -2147483648)
+		write(1, "80000000", 8);
 	len = find_len(n);
 	hex = "0123456789abcdef";
 	result = ft_calloc(len + 1, sizeof(char));
