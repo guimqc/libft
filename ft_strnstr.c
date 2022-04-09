@@ -25,10 +25,12 @@ static int	is_valid(char *haystack, char *needle, size_t i, size_t len)
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
 	size_t	i;
+	size_t needle_len;
 
-	if (ft_strlen((char *)needle) > ft_strlen((char *)haystack))
+	needle_len = ft_strlen((char *)needle);
+	if (needle_len > ft_strlen((char *)haystack))
 		return (NULL);
-	if (ft_strlen((char *)needle) == 0)
+	if (needle_len == 0)
 		return ((char *)haystack);
 	i = -1;
 	while (++i < len && ((char *)haystack)[i])
