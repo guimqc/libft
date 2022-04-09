@@ -15,12 +15,14 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*str;
 	size_t	i;
+	size_t s_len;
 
-	str = ft_calloc(ft_strlen((char *)s) + 1, sizeof(char));
+	s_len = ft_strlen((char *)s);
+	str = ft_calloc(s_len + 1, sizeof(char));
 	if (!str)
 		return (NULL);
 	i = -1;
-	while (++i < ft_strlen((char *)s))
+	while (++i < s_len)
 		str[i] = f(i, s[i]);
 	str[i] = '\0';
 	return (str);
