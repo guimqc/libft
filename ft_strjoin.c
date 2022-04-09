@@ -16,17 +16,21 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*str;
 	int		strsize;
 	size_t	i;
+	size_t s1_len;
+	size_t s2_len;
 
-	strsize = ft_strlen((char *)s1) + ft_strlen((char *)s2) + 1;
+	s1_len = ft_strlen((char *)s1);
+	s1_len = ft_strlen((char *)s2);
+	strsize = s1_len + s2_len + 1;
 	str = ft_calloc(strsize, sizeof(char));
 	if (!str)
 		return (NULL);
 	i = -1;
-	while (++i < ft_strlen((char *)s1))
+	while (++i < s1_len)
 		str[i] = s1[i];
 	i = -1;
-	while (++i < ft_strlen((char *)s2))
-		str[i + ft_strlen((char *)s1)] = s2[i];
-	str[i + ft_strlen((char *)s1)] = '\0';
+	while (++i < s2_len)
+		str[i + s1_len] = s2[i];
+	str[i + s1_len] = '\0';
 	return (str);
 }
