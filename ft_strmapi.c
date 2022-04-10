@@ -15,11 +15,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*str;
 	size_t	i;
-<<<<<<< HEAD
-	size_t s_len;
-=======
 	size_t	s_len;
->>>>>>> cd1abeaa7c164e7779d57c7579f2e7e4a8ca44cb
 
 	s_len = ft_strlen((char *)s);
 	str = ft_calloc(s_len + 1, sizeof(char));
