@@ -34,11 +34,11 @@ static char	**alloc_arr(char *s, char c)
 {
 	char	**arr;
 	size_t	i;
-	size_t	ii;
+	size_t	j;
 	size_t	count;
 
 	i = -1;
-	ii = 0;
+	j = 0;
 	count = 0;
 	arr = ft_calloc(split_count(s, c) + 1, sizeof(char *));
 	if (!arr)
@@ -50,8 +50,8 @@ static char	**alloc_arr(char *s, char c)
 		if ((i != 0 && s[i] == c && s[i - 1] != c)
 			|| (i == ft_strlen(s) - 1 && s[i] != c))
 		{
-			arr[ii++] = ft_calloc(count + 1, sizeof(char));
-			if (!arr[ii - 1])
+			arr[j++] = ft_calloc(count + 1, sizeof(char));
+			if (!arr[j - 1])
 				return (NULL);
 			count = 0;
 		}
@@ -62,24 +62,24 @@ static char	**alloc_arr(char *s, char c)
 char	**fill_arr(char **arr, char *s, char c)
 {
 	size_t	i;
-	size_t	ii;
+	size_t	j;
 	size_t	count;
 
 	i = -1;
-	ii = 0;
+	j = 0;
 	count = 0;
 	while (++i < ft_strlen((char *)s))
 	{
 		if (s[i] != c)
-			arr[ii][count++] = s[i];
+			arr[j][count++] = s[i];
 		if (i != 0 && s[i] == c && s[i - 1] != c
-			&& ii < split_count((char *)s, c) - 1)
+			&& j < split_count((char *)s, c) - 1)
 		{
-			arr[ii++][count] = '\0';
+			arr[j++][count] = '\0';
 			count = 0;
 		}
 	}
-	arr[++ii] = 0;
+	arr[++j] = 0;
 	return (arr);
 }
 

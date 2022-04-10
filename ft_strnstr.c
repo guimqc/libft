@@ -13,11 +13,11 @@
 
 static int	is_valid(char *haystack, char *needle, size_t i, size_t len)
 {
-	int	ii;
+	int	j;
 
-	ii = 0;
-	while (haystack[i] && needle[ii])
-		if (haystack[i++] != needle[ii++] || i > len)
+	j = 0;
+	while (haystack[i] && needle[j])
+		if (haystack[i++] != needle[j++] || i > len)
 			return (0);
 	return (1);
 }
