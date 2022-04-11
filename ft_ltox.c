@@ -26,7 +26,7 @@ static int	find_len(long n)
 	return (len);
 }
 
-char	*ft_itox(long n, int caps)
+char	*ft_ltox(long n, int caps)
 {
 	int		len;
 	char	*hex;
