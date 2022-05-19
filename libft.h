@@ -14,12 +14,14 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+# include <stdarg.h>
 
 typedef struct s_list
 {
 	void			*content;
 	struct s_list	*next;
 }	t_list;
+
 
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(void *content);
@@ -69,5 +71,15 @@ int		ft_isprint(char c);
 int		ft_atoi(const char *str);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
+
+int		print_c(char c);
+int		print_s(char *s);
+int		print_nbr(int n);
+int		print_percent(void);
+int		print_u(unsigned int n);
+int		print_p(unsigned long n);
+int		ft_printf(const char *s, ...);
+int		print_x(unsigned int n, int caps);
+int		format_and_print(va_list arg_list, char format);
 
 #endif
