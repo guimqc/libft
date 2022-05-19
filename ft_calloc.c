@@ -14,9 +14,12 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*p;
+	int		n;
 
-	p = malloc(size * count);
+	n = (count * size);
+	p = malloc(n);
 	if (p)
-		ft_bzero(p, (count * size));
+		while (n > 0)
+			((char *)p)[--n] = 0;
 	return (p);
 }
