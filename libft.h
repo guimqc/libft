@@ -6,7 +6,7 @@
 /*   By: gvial <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:08:42 by gvial             #+#    #+#             */
-/*   Updated: 2022/03/31 16:08:47 by gvial            ###   ########.fr       */
+/*   Updated: 2022/05/25 15:25:41 by gvial            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -27,7 +27,6 @@ t_list	*ft_lstnew(void *content);
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*ft_itoa(int n);
 char	*ft_ltoa(long n);
-char	*get_next_line(int fd);
 char	*ft_ltox(long n, int caps);
 char	*ft_strdup(const char *s1);
 char	*ft_strchr(const char *s, int c);
