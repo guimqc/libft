@@ -6,7 +6,7 @@
 /*   By: gvial <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:08:42 by gvial             #+#    #+#             */
-/*   Updated: 2022/05/25 15:25:41 by gvial            ###   ########.fr       */
+/*   Updated: 2022/06/17 19:42:34 by gvial            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -73,7 +73,5 @@ int		ft_atoi(const char *str);
 int		ft_printf(const char *s, ...);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
-
-
 
 #endif
