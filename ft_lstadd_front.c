@@ -6,13 +6,13 @@
 /*   By: gvial <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 10:22:56 by gvial             #+#    #+#             */
-/*   Updated: 2022/03/28 10:23:34 by gvial            ###   ########.fr       */
+/*   Updated: 2022/07/14 22:12:35 by gvial            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_lstadd_front(t_list **lst, t_list *node)
 {
-	new->next = *lst;
-	*lst = new;
+	node->next = *lst;
+	*lst = node;
 }

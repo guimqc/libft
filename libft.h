@@ -6,7 +6,7 @@
 /*   By: gvial <marvin@42quebec.com>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:08:42 by gvial             #+#    #+#             */
-/*   Updated: 2022/06/17 19:42:34 by gvial            ###   ########.fr       */
+/*   Updated: 2022/07/14 22:13:14 by gvial            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -52,8 +52,8 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	*ft_calloc(size_t count, size_t size);
 void	*ft_memset(void *str, int c, size_t len);
-void	ft_lstadd_back(t_list **lst, t_list *new);
-void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *node);
+void	ft_lstadd_front(t_list **lst, t_list *node);
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 void	*ft_memchr(const void *s, int c, size_t n);
 void	ft_lstclear(t_list **lst, void (*del)(void*));
